@@ -1,6 +1,10 @@
 name: Continuous Integration
 
-on: [push, pull_request]
+on: 
+  workflow_run:
+    workflows: ["Deploy to EC2"]
+    types:
+      - completed
 
 jobs:
   test:
